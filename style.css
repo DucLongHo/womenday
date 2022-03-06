@@ -1,0 +1,213 @@
+html,
+body {
+  margin: 0;
+  height: 100%;
+}
+
+.center-el {
+  display: -webkit-flex;
+  justify-content: center;
+  align-items: center;
+  height: 60%;
+}
+
+input[type=checkbox] {
+  display: none;
+}
+input[type=checkbox] + svg {
+  fill: #fff;
+  height: 50px;
+  margin-right: 150px;
+}
+input[type=checkbox] + svg + label {
+  width: 130px;
+  height: 55px;
+  background: #43a3a0;
+  display: inline-block;
+  border-radius: 30px;
+  position: relative;
+  cursor: pointer;
+}
+input[type=checkbox] + svg + label:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
+  display: block;
+  width: 40px;
+  height: 40px;
+  background: #fff;
+  border-radius: 30px;
+  animation: bounceOut 0.5s linear;
+  left: 10px;
+}
+input[type=checkbox] + svg + label + div {
+  background: #87d7d4;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -1;
+}
+input[type=checkbox] + svg + label span {
+  font-size: 18pt;
+  color: #fff;
+  position: absolute;
+  font-family: "Fredoka One", cursive;
+  top: 50%;
+}
+input[type=checkbox] + svg + label span:first-child {
+  left: -30px;
+  transform: translate(-100%, -50%);
+}
+input[type=checkbox] + svg + label span:last-child {
+  right: -30px;
+  transform: translate(100%, -50%);
+}
+input[type=checkbox]:checked + svg {
+  fill: #ff707b;
+  animation: beating 1s infinite;
+}
+input[type=checkbox]:checked + svg + label {
+  background: #ff707b;
+}
+input[type=checkbox]:checked + svg + label:before {
+  animation: bounce 0.5s linear;
+  left: calc(100% - 50px);
+}
+input[type=checkbox]:checked + svg + label + div {
+  background: #ffb3b3;
+}
+
+@keyframes beating {
+  0% {
+    transform: scale(1);
+    -webkit-transform: scale(1);
+  }
+  40% {
+    transform: scale(1);
+    -webkit-transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+  }
+  60% {
+    transform: scale(1);
+    -webkit-transform: scale(1);
+  }
+  70% {
+    transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+  }
+  80% {
+    transform: scale(1);
+    -webkit-transform: scale(1);
+  }
+  90% {
+    transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+    -webkit-transform: scale(1);
+  }
+}
+@keyframes bounce {
+  0% {
+    left: 10px;
+  }
+  80% {
+    left: calc(100% - 50px);
+  }
+  90% {
+    left: calc(100% - 60px);
+  }
+  100% {
+    left: calc(100% - 50px);
+  }
+}
+@keyframes bounceOut {
+  0% {
+    left: calc(100% - 50px);
+  }
+  80% {
+    left: 10px;
+  }
+  90% {
+    left: 20px;
+  }
+  100% {
+    left: 10px;
+  }
+}
+
+.text {
+  display: none;
+  position: fixed;
+  bottom: 50px;
+  font-family: "Dancing Script", cursive;
+  font-size: 30px;
+  color: #eeeeee;
+  text-shadow: 0 0 5px #fff5, 0 0 10px #fff5, 0 0 15px #e6007355, 0 0 20px #e6007355, 0 0 25px #e6007355, 0 0 30px #e6007355, 0 0 35px #e6007355;
+  text-align: center;
+}
+.heading{
+  top: 200px;
+  margin-top: 80px;
+}
+
+span{
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(-100%);
+  transition: all 0.4s ease-in-out
+}
+
+.fade{
+ opacity: 1;
+ transform: translateY(0);
+}
+.heart {
+  top: 200px;
+  margin-top: 300px;
+}
+svg #line {
+  fill: none;
+  stroke: #e00000;
+  stroke-width: 1.5;
+  stroke-linecap: butt;
+  stroke-linejoin: round;
+  stroke-miterlimit: 4;
+
+  stroke-opacity: 1;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation: dash 3s linear infinite;
+}
+svg #point {
+  fill: none;
+  stroke: #f00000;
+  stroke-width: 5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-miterlimit: .1;
+  stroke-opacity: 1;
+  stroke-dasharray: .0001, .9999;
+  stroke-dashoffset: 1;
+  animation: dash 3s linear infinite;
+}
+
+@keyframes dash {
+  0% {
+    stroke-dashoffset: 1;
+  }
+  80% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
