@@ -155,8 +155,8 @@ input[type=checkbox]:checked + svg + label + div {
   text-align: center;
 }
 .heading{
-  top: 200px;
-  margin-top: 80px;
+  height: 60%;
+  padding-top: 50px;
 }
 
 span{
